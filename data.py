@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -37,17 +36,55 @@ def visualize_data(df):
         plt.show()
 
 
-asthma_df = preprocess_csv("asthma_hospitalizations.csv")
-aqi_df = preprocess_csv("annual_aqi_by_county_2022.csv")
+def visualize_correlation(df, target_column="Hospitalizations"):
+    """Visualize correlation.
 
-# Replace "Suppressed" with NaN in asthma data
-asthma_df["Value"] = asthma_df["Value"].replace("Suppressed", np.nan)
+    Parameters:
+        df (DataFrame): The merged dataset containing AQI and asthma
+            hospitalization data.
+        target_column (str): The column representing asthma hospitalizations.
 
-# Merge data
-merged_df = pd.merge(asthma_df, aqi_df, on=["County", "State", "Year"],
-                     how="inner")
+    Returns:
+        None (Displays plots)
+    """
+    df[target_column] = pd.to_numeric(df[target_column], errors="coerce")
 
-# Save and check results
-merged_df.to_csv("merged_data.csv", index=False)
-print(merged_df.head())
-# visualize_data(merged_df)
+    df = df.dropna(subset=[target_column])
+
+    # List of AQI-related columns
+    aqi_columns = [
+        "Days with AQI", "Good Days", "Moderate Days", "Unhealthy for Sensitive Groups Days",
+        "Unhealthy Days", "Very Unhealthy Days", "Hazardous Days", "Max AQI",
+        "90th Percentile AQI", "Median AQI", "Days CO", "Days NO2", "Days Ozone",
+        "Days PM2.5", "Days PM10"
+    ]
+
+    # Ensure AQI columns exist in the dataset
+    relevant_columns = [col for col in aqi_columns if col in df.columns]
+
+    # Correlation Heatmap
+    plt.figure(figsize=(12, 6))
+    correlation_matrix = df[[target_column] + relevant_columns].corr()
+    sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f",
+                linewidths=0.5)
+    plt.title("Correlation Heatmap: AQI Factors vs Asthma Hospitalizations")
+    plt.show()
+
+    # Scatter Plot for Key AQI Indicators
+    key_aqi_columns = ["Max AQI", "Median AQI", "Days PM2.5", "Days Ozone"]
+
+    plt.figure(figsize=(12, 6))
+    for i, col in enumerate(key_aqi_columns, 1):
+        if col in df.columns:
+            plt.subplot(2, 2, i)
+            sns.scatterplot(x=df[col], y=df[target_column], alpha=0.6)
+            plt.xlabel(col)
+            plt.ylabel("Asthma Hospitalizations")
+            plt.title(f"{col} vs. Asthma Hospitalizations")
+
+    plt.tight_layout()
+    plt.show()
+
+
+merged_df = pd.read_csv("merged_data.csv")
+visualize_correlation(merged_df)
