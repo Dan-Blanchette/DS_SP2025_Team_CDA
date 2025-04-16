@@ -1,0 +1,317 @@
+CountyFIPS,County,Predicted_Hospitalizations
+36081,Queens,540
+12086,Miami-Dade,530
+36061,New York,487
+12095,Orange,458
+34013,Essex,448
+12011,Broward,442
+6073,San Diego,441
+36059,Nassau,427
+36103,Suffolk,414
+6071,San Bernardino,399
+12099,Palm Beach,393
+6059,Orange,353
+36119,Westchester,348
+12057,Hillsborough,346
+6065,Riverside,341
+34007,Camden,331
+25025,Suffolk,331
+6019,Fresno,327
+12031,Duval,322
+29095,Jackson,318
+42003,Allegheny,298
+6001,Alameda,295
+55079,Milwaukee,294
+37119,Mecklenburg,293
+34017,Hudson,290
+21111,Jefferson,282
+49035,Salt Lake,279
+4019,Pima,275
+27053,Hennepin,274
+8031,Denver,272
+25017,Middlesex,271
+26125,Oakland,268
+6085,Santa Clara,266
+36055,Monroe,265
+34023,Middlesex,261
+6067,Sacramento,259
+36029,Erie,258
+53033,King,255
+47037,Davidson,253
+44007,Providence,249
+34003,Bergen,248
+42045,Delaware,246
+26099,Macomb,246
+29510,St. Louis City,246
+25027,Worcester,243
+37183,Wake,242
+24005,Baltimore,239
+34039,Union,238
+12105,Polk,236
+25009,Essex,234
+35001,Bernalillo,227
+12071,Lee,222
+6013,Contra Costa,221
+36085,Richmond,221
+12103,Pinellas,219
+12097,Osceola,215
+53053,Pierce,206
+42091,Montgomery,204
+25005,Bristol,203
+26049,Genesee,203
+6029,Kern,200
+26081,Kent,197
+34025,Monmouth,195
+34029,Ocean,194
+47157,Shelby,194
+8001,Adams,191
+51760,Richmond City,191
+6075,San Francisco,190
+12117,Seminole,190
+12101,Pasco,189
+34031,Passaic,189
+12009,Brevard,189
+8005,Arapahoe,184
+37081,Guilford,183
+34021,Mercer,182
+51059,Fairfax,182
+36071,Orange,177
+42017,Bucks,176
+27123,Ramsey,176
+8041,El Paso,176
+22033,East Baton Rouge,176
+25013,Hampden,176
+25023,Plymouth,175
+42095,Northampton,175
+42011,Berks,174
+6099,Stanislaus,173
+12001,Alachua,172
+36067,Onondaga,171
+12127,Volusia,171
+42071,Lancaster,170
+22071,Orleans,167
+45079,Richland,167
+42133,York,167
+12069,Lake,166
+22051,Jefferson,166
+6077,San Joaquin,166
+12083,Marion,164
+12081,Manatee,164
+36087,Rockland,164
+41051,Multnomah,163
+37067,Forsyth,163
+24033,Prince George's,161
+37051,Cumberland,159
+45045,Greenville,159
+42077,Lehigh,157
+34011,Cumberland,157
+36001,Albany,156
+34015,Gloucester,156
+37063,Durham,154
+31055,Douglas,153
+6047,Merced,152
+8059,Jefferson,152
+20173,Sedgwick,152
+4021,Pinal,151
+6107,Tulare,151
+51087,Henrico,149
+42043,Dauphin,148
+49049,Utah,148
+27037,Dakota,148
+34001,Atlantic,148
+12033,Escambia,146
+22017,Caddo,146
+8123,Weld,144
+25021,Norfolk,143
+19153,Polk,142
+20209,Wyandotte,141
+53061,Snohomish,141
+24031,Montgomery,140
+37147,Pitt,138
+51153,Prince William,137
+29047,Clay,137
+41067,Washington,137
+45083,Spartanburg,134
+33011,Hillsborough,134
+6111,Ventura,133
+12111,St. Lucie,133
+26161,Washtenaw,133
+20091,Johnson,131
+51041,Chesterfield,130
+49011,Davis,130
+42029,Chester,130
+26021,Berrien,129
+21067,Fayette,128
+6097,Sonoma,128
+55025,Dane,127
+6081,San Mateo,127
+45063,Lexington,126
+37101,Johnston,126
+12073,Leon,125
+12021,Collier,124
+22019,Calcasieu,124
+4025,Yavapai,124
+36027,Dutchess,124
+33015,Rockingham,124
+25015,Hampshire,123
+6113,Yolo,123
+42007,Beaver,122
+42125,Washington,122
+6061,Placer,122
+45019,Charleston,121
+34027,Morris,120
+22055,Lafayette,120
+29077,Greene,120
+26065,Ingham,120
+19113,Linn,119
+26077,Kalamazoo,119
+6007,Butte,119
+49057,Weber,119
+24027,Howard,118
+53063,Spokane,118
+12005,Bay,117
+42021,Cambria,117
+26121,Muskegon,117
+12113,Santa Rosa,116
+24003,Anne Arundel,116
+27003,Anoka,116
+6053,Monterey,116
+12115,Sarasota,116
+26147,St. Clair,115
+12085,Martin,115
+55009,Brown,115
+35013,Dona Ana,115
+27109,Olmsted,114
+55133,Waukesha,114
+6033,Lake,114
+26017,Bay,114
+42049,Erie,113
+42129,Westmoreland,112
+42069,Lackawanna,112
+29037,Cass,111
+24043,Washington,111
+19163,Scott,111
+29099,Jefferson,110
+21093,Hardin,110
+6083,Santa Barbara,110
+42079,Luzerne,110
+35045,San Juan,109
+20177,Shawnee,109
+53011,Clark,108
+37159,Rowan,108
+47065,Hamilton,108
+6089,Shasta,108
+6095,Solano,108
+55059,Kenosha,107
+37129,New Hanover,107
+47009,Blount,107
+47165,Sumner,107
+29019,Boone,106
+36065,Oneida,106
+47125,Montgomery,106
+42027,Centre,106
+45051,Horry,106
+41029,Jackson,106
+12035,Flagler,106
+6025,Imperial,105
+41047,Marion,105
+42085,Mercer,105
+8035,Douglas,104
+36063,Niagara,104
+22103,St. Tammany,104
+21037,Campbell,104
+22015,Bossier,104
+8069,Larimer,103
+51107,Loudoun,103
+23005,Cumberland,103
+47093,Knox,103
+42089,Monroe,102
+41039,Lane,102
+22057,Lafourche,102
+8077,Mesa,102
+6031,Kings,101
+4027,Yuma,101
+35049,Santa Fe,101
+35043,Sandoval,101
+41005,Clackamas,101
+24025,Harford,100
+6041,Marin,100
+45015,Berkeley,100
+8101,Pueblo,100
+45091,York,100
+41017,Deschutes,99
+37179,Union,99
+25011,Franklin,99
+6039,Madera,99
+12061,Indian River,99
+53067,Thurston,98
+55101,Racine,98
+36091,Saratoga,98
+21059,Daviess,98
+29097,Jasper,98
+24015,Cecil,97
+27145,Stearns,97
+44003,Kent,97
+45041,Florence,97
+31109,Lancaster,96
+53035,Kitsap,96
+34041,Warren,96
+42013,Blair,96
+29021,Buchanan,96
+35025,Lea,95
+12091,Okaloosa,95
+45007,Anderson,94
+6087,Santa Cruz,94
+8013,Boulder,94
+6079,San Luis Obispo,94
+4017,Navajo,94
+42041,Cumberland,94
+12055,Highlands,92
+53005,Benton,92
+36079,Putnam,92
+53077,Yakima,92
+27163,Washington,91
+21019,Boyd,91
+51179,Stafford,91
+4003,Cochise,90
+12023,Columbia,89
+21227,Warren,89
+55105,Rock,89
+36013,Chautauqua,88
+12017,Citrus,88
+45031,Darlington,88
+26139,Ottawa,88
+22073,Ouachita,88
+19013,Black Hawk,88
+22079,Rapides,87
+53073,Whatcom,87
+23019,Penobscot,87
+51013,Arlington,86
+6023,Humboldt,86
+6017,El Dorado,86
+12107,Putnam,86
+21029,Bullitt,86
+23031,York,86
+42075,Lebanon,85
+47163,Sullivan,84
+33013,Merrimack,84
+4015,Mohave,84
+42073,Lawrence,83
+23001,Androscoggin,83
+24017,Charles,81
+22109,Terrebonne,81
+51085,Hanover,81
+47187,Williamson,81
+31153,Sarpy,81
+25001,Barnstable,80
+42055,Franklin,80
+21015,Boone,79
+12089,Nassau,79
+42063,Indiana,79
+22105,Tangipahoa,78
+24021,Frederick,76
+26115,Monroe,75
+47189,Wilson,75
+35005,Chaves,75
+24013,Carroll,74
+55073,Marathon,72
