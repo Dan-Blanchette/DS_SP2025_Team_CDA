@@ -18,7 +18,7 @@ from sklearn.metrics import r2_score, mean_absolute_error
 # ----------
 # load data
 # ----------
-df = pd.read_csv("/home/jreed/data-science-group-project/cleaned_aqi_hospitalization_data_for_VGboost_RF.csv")
+df = pd.read_csv("/home/jreed/DS_SP2025_Team_CDA/cleaned_aqi_hospitalization_data_for_VGboost_RF.csv")
 # print(df.columns)
 
 # ----------
