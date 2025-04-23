@@ -130,9 +130,9 @@ for i,model in enumerate(models):
     ax = plt.subplot()
     ax.spines['right'].set_color((.9,.9,.9))
     ax.spines['top'].set_color((.9,.9,.9))
-    plt.scatter(test_outcomes, predictions_test, color=[.5, .5, .8])
-    plt.plot([min(test_outcomes),max(test_outcomes)], [min(test_outcomes),max(test_outcomes)], color=[0, 0, .5], linestyle='solid') # optimal line
+    plt.scatter(test_outcomes, predictions_test, color=[.5, .5, .8], alpha=.5)
+    plt.plot([min(test_outcomes),max(test_outcomes)], [min(test_outcomes),max(test_outcomes)], color=[0, 0, .5], linestyle='dashed') # optimal line
     plt.xlabel("Actual", style="italic")
     plt.ylabel("Predicted", style="italic")
-    plt.title(f"Prediction vs Actual Hospitalizations- {model_names[i]}")
+    plt.title(f"Prediction vs Actual Hospitalizations - {model_names[i]}")
     plt.show()
