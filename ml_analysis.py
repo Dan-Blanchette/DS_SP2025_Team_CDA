@@ -26,8 +26,8 @@ df = pd.read_csv("/home/jreed/DS_SP2025_Team_CDA/cleaned_aqi_hospitalization_dat
 # ----------
 outcomes = 'Value'
 features = [
-    'StateFIPS', 
-    'CountyFIPS', 
+    # 'StateFIPS', 
+    # 'CountyFIPS', 
     'Year',
     'Good Days', 
     'Moderate Days', 'Unhealthy for Sensitive Groups Days', 
@@ -55,7 +55,6 @@ print(f'Min hospitalizations: {np.min(train_outcomes)}')
 print(f'Mean hospitalizations: {np.mean(train_outcomes)}')
 
 training_features, test_features, training_outcomes, test_outcomes = train_test_split(train_features, train_outcomes, test_size=0.3)
-training_features, val_features, training_outcomes, val_outcomes = train_test_split(train_features, train_outcomes, test_size=.1)
 
 # -----------
 # set up models
@@ -84,23 +83,17 @@ for i,model in enumerate(models):
     mean_test_acc = model.score(test_features, test_outcomes)
     print(f'mean testing acc: {mean_test_acc*100:.2f} %')
 
-    mean_val_acc = model.score(val_features, val_outcomes)
-    print(f'mean validation acc: {mean_val_acc*100:.2f} %')
-
     # -------
     # calculate errors
     # -------
 
     predictions_train = model.predict(train_features)
     predictions_test = model.predict(test_features)
-    predictions_val = model.predict(val_features)
 
     mae_train = mean_absolute_error(train_outcomes, predictions_train)
     print(f'MAE Train: {mae_train:.2f}')
     mae_test = mean_absolute_error(test_outcomes, predictions_test)
     print(f'MAE Test: {mae_test:.2f}')
-    mae_val = mean_absolute_error(val_outcomes, predictions_val)
-    print(f'MAE: {mae_val:.2f}')
 
     # ---------
     # calculate r2
@@ -109,9 +102,6 @@ for i,model in enumerate(models):
     print(f'R2 val train: {r2_val_train:.2f}')
     r2_val_test = r2_score(test_outcomes, predictions_test)
     print(f'R2 val test: {r2_val_test:.2f}')
-    r2_val_val = r2_score(val_outcomes, predictions_val)
-    print(f'R2 val valid: {r2_val_val:.2f}')
-
 
     # ------------
     # visualize predictions
