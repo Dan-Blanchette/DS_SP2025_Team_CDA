@@ -8,7 +8,9 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import scipy.stats as stats
 import numpy as np
+
 from sklearn.ensemble import RandomForestRegressor, BaggingRegressor, GradientBoostingRegressor
 from sklearn.linear_model import LinearRegression
 
@@ -71,12 +73,15 @@ for i,model in enumerate(models):
     # ------------
     # train model
     # ------------
+    
     model.fit(training_features, training_outcomes)
 
     print(f'\n----{model_names[i]} model trained')
+
     # ------------
     # score model accuracy
     # ------------
+
     mean_accuracy = model.score(training_features, training_outcomes)
     print(f'mean training acc: {mean_accuracy*100:.2f} %')
 
@@ -98,31 +103,67 @@ for i,model in enumerate(models):
     # ---------
     # calculate r2
     # ---------
+
     r2_val_train = r2_score(train_outcomes, predictions_train)
     print(f'R2 val train: {r2_val_train:.2f}')
     r2_val_test = r2_score(test_outcomes, predictions_test)
     print(f'R2 val test: {r2_val_test:.2f}')
 
+
+    # -----------------
+    # calculate error and standard deviation
+    # -----------------
+
+    error = predictions_test - test_outcomes
+    abs_error = np.abs(error)
+    mean = np.mean(test_outcomes)
+    std = np.std(test_outcomes)
+    
+    abs_error[abs_error<=std] = 0
+    abs_error[abs_error>std] = 1
+    
+    print(f'{(len(abs_error)-abs_error.sum())*100/len(abs_error):.1f}% are within {std:.1f} of actual values.')
+    
     # ------------
     # visualize predictions
     # ------------
+    
+    mean = np.mean(error)
+    std = np.std(error)
 
-    # # showing error
-    # error = test_outcomes - predictions
-    # plt.scatter(predictions, error)
-    # plt.axhline(0, color='red', linestyle='--')
-    # plt.xlabel("Predicted")
-    # plt.ylabel("Error")
-    # plt.title(f"Error vs predicted - {model_names[i]}")
-    # plt.show()
-
-    # find correlation?
+    # show distribution of errors
     ax = plt.subplot()
     ax.spines['right'].set_color((.9,.9,.9))
     ax.spines['top'].set_color((.9,.9,.9))
-    plt.scatter(test_outcomes, predictions_test, color=[.5, .5, .8], alpha=.5)
-    plt.plot([min(test_outcomes),max(test_outcomes)], [min(test_outcomes),max(test_outcomes)], color=[0, 0, .5], linestyle='dashed') # optimal line
-    plt.xlabel("Actual", style="italic")
-    plt.ylabel("Predicted", style="italic")
-    plt.title(f"Prediction vs Actual Hospitalizations - {model_names[i]}")
+
+    # plot histogram of errors
+    counts, bins, ignored = plt.hist(error, bins=30, color=[.5, .5, .8], alpha=.5, density =True)
+    
+    # plot normal distribution
+    x = np.linspace(mean - 4*std, mean + 4*std, 1000)
+    pdf = stats.norm.pdf(x, mean, std)
+    pdf = pdf*max(counts)/max(pdf)  # scale to match error vals
+    plt.plot(x, pdf, color=[0, 0, .5], linestyle='dashed', label="Normal Distribution")
+    
+    # plot standard deviation lines
+    plt.axvline(mean-std, color=[.3, .7, .3], linestyle='dashed', label="Standard Deviation")
+    plt.axvline(mean+std, color=[.3, .7, .3], linestyle='dashed')
+
+    # plot labels
+    plt.title(f'Error Distribution - {model_names[i]}')
+    plt.xlabel('Error between predicted and actual', style="italic")
+    plt.ylabel('Frequency', style="italic")
+    plt.legend()
     plt.show()
+
+
+    # find correlation?
+    # ax = plt.subplot()
+    # ax.spines['right'].set_color((.9,.9,.9))
+    # ax.spines['top'].set_color((.9,.9,.9))
+    # plt.scatter(train_outcomes, predictions_train, color=[.5, .5, .8], alpha=.5)
+    # plt.plot([min(train_outcomes),max(train_outcomes)], [min(train_outcomes),max(train_outcomes)], color=[0, 0, .5], linestyle='dashed') # optimal line
+    # plt.xlabel("Actual", style="italic")
+    # plt.ylabel("Predicted", style="italic")
+    # plt.title(f"Prediction vs Actual Hospitalizations - {model_names[i]}")
+    # plt.show()
