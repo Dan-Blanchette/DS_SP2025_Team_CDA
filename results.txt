@@ -9,6 +9,7 @@ MAE Train: 65.08
 MAE Test: 112.22
 R2 val train: 0.67
 R2 val test: 0.13
+81.5% are within 185.5 of actual values.
 
 ----Bagging model trained
 mean training acc: 42.55 %
@@ -17,6 +18,7 @@ MAE Train: 102.04
 MAE Test: 113.68
 R2 val train: 0.35
 R2 val test: 0.15
+82.0% are within 185.5 of actual values.
 
 ----Boosting model trained
 mean training acc: 62.21 %
@@ -25,6 +27,7 @@ MAE Train: 91.60
 MAE Test: 123.62
 R2 val train: 0.43
 R2 val test: -0.08
+78.1% are within 185.5 of actual values.
 
 ----Linear Regression model trained
 mean training acc: 15.33 %
@@ -33,3 +36,4 @@ MAE Train: 113.91
 MAE Test: 111.58
 R2 val train: 0.15
 R2 val test: 0.14
+84.3% are within 185.5 of actual values.
